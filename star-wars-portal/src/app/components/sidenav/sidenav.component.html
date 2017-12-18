@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" #navContent>
+  <a class="navbar-brand" href="#">Star Wars Portal</a>
+  <button class="navbar-toggler x navbar-toggler-right" type="button" (click)="navbarCollapsed = !navbarCollapsed" [attr.aria-expanded]="!navbarCollapsed"
+    aria-controls="navbarContent">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="navbar-collapse collapse" [ngbCollapse]="navbarCollapsed" id="navbarContent" #navMenu>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/characters" routerLinkActive="active">Characters</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/starships" routerLinkActive="active">Startships</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/about" routerLinkActive="active">About</a>
+      </li>
+    </ul>
+  </div>
+</nav>

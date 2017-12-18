@@ -1,0 +1,12 @@
+.jumbotron {
+    position: fixed;
+    width: 100% !important;
+    height: 100% !important;
+    background: #000 !important;
+    overflow: hidden !important;
+  }
+
+  .test{
+      font-family: Arial, Helvetica, sans-serif !important;
+      color: yellow !important;
+  }

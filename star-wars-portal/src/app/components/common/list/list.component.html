@@ -1,0 +1,21 @@
+<div class="col-12">
+  <input type="text">
+</div>
+<div class="col-12">
+  <table class="table">
+    <thead>
+      <tr>
+        <th *ngFor="let header of headers" (click)="sortData(header)">{{header}}</th>
+        <th *ngIf="actions">Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of listData">
+        <td *ngFor="let key of headers">{{data[key]}}</td>
+        <td *ngIf="actions">
+          <a [routerLink]="'./' + data.id">Details</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

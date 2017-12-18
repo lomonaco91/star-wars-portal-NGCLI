@@ -13,18 +13,18 @@ export class StarshipService {
 
   constructor(private http: Http) { }
 
-  private characterUrl = 'https://swapi.co/api/starships'; 
+  private starshipUrl = 'https://swapi.co/api/starships'; 
 
-  getCharacters (page?:number):Observable<Starship[]> {
-    let url = this.characterUrl;
+  getStarship (page?:number):Observable<Starship[]> {
+    let url = this.starshipUrl;
     if (page) url += `?page=${page}`;
     return this.http.get(url)
       .map((res:Response) =>  res.json())
       .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
   }
 
-  getCharacter(id) {
-    return this.http.get(`${this.characterUrl}/${id}`)
+  getStarshipId(id) {
+    return this.http.get(`${this.starshipUrl}/${id}`)
       .map((res:Response) => res.json())
       .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
   }

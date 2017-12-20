@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StarshipService } from '../../services/starship.service';
 import { ActivatedRoute } from '@angular/router';
+import { Broadcaster } from '../../classes/broadcaster';
 
 @Component({
   selector: 'app-starships-deteails-page',
@@ -14,7 +15,8 @@ export class StarshipsDeteailsPageComponent implements OnInit {
 
   constructor(
     private _starshipService: StarshipService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private broadcaster: Broadcaster
   ) { }
 
   ngOnInit() {
@@ -22,12 +24,15 @@ export class StarshipsDeteailsPageComponent implements OnInit {
   }
 
   getStarshipID() {
+    this.broadcaster.broadcast('loading', true);
     const id = +this.route.snapshot.paramMap.get('id');
     this._starshipService.getStarshipId(id)
     .subscribe(result => {
+      this.broadcaster.broadcast('loading', false);
       this.starship = result;
       console.log(result);
     }, error => {
+      this.broadcaster.broadcast('loading', false);
       console.error(error);
     })
   }

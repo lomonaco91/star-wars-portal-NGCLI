@@ -8,7 +8,14 @@
           <li class="list-group-item">Manufacturer: {{starship.manufacturer}}</li>
           <li class="list-group-item">Cost_in_credits: {{starship.cost_in_credits}}</li>
           <li class="list-group-item">Manufacturer: {{starship.manufacturer}}</li>
-          <li class="list-group-item">Pilots:<a href="">{{starship.pilots}}</a></li>
+          <li class="list-group-item">
+            Pilots:
+            <ul class="list-group">
+              <li class="list-group-item" *ngFor="let pilot of starship.pilots">
+                <a [href]="pilot">{{pilot}}</a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </div>
     </div>

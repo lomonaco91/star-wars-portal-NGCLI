@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { HttpModule} from '@angular/http';
+import { Broadcaster } from './classes/broadcaster';
 
 
 import { AppComponent } from './app.component';
@@ -15,6 +16,8 @@ import { CharactersDetailsPageComponent } from './components/characters-details-
 import { StarshipsDeteailsPageComponent } from './components/starships-deteails-page/starships-deteails-page.component';
 import { ListComponent } from './components/common/list/list.component';
 import { AboutPageComponent } from './components/about-page/about-page.component';
+import { SearchPipe } from './pipes/search.pipe';
+import { LoadingComponent } from './components/common/loading/loading.component';
 
 const ROUTES: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -36,7 +39,9 @@ const ROUTES: Routes = [
     CharactersDetailsPageComponent,
     StarshipsDeteailsPageComponent,
     ListComponent,
-    AboutPageComponent
+    AboutPageComponent,
+    SearchPipe,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +50,7 @@ const ROUTES: Routes = [
     NgbModule.forRoot(),
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [],
+  providers: [ Broadcaster ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

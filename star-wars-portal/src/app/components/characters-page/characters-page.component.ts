@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CharactersService } from '../../services/characters.service';
+import { Broadcaster } from '../../classes/broadcaster';
 
 @Component({
   selector: 'app-characters-page',
@@ -13,20 +14,21 @@ export class CharactersPageComponent implements OnInit {
   page:number;
   charactersHeaders : string[];
   charactersList : any[];
-  constructor(private _charcaterService: CharactersService) { }
+  constructor(private _charcaterService: CharactersService, private broadcaster: Broadcaster) { }
 
   ngOnInit() {
     this.getList();
   }
 
   getList() {
-    this.loading = true;
+    this.broadcaster.broadcast('loading', true);
     this._charcaterService.getCharacters(this.page)
     .subscribe(result => {
-      this.loading = false;
+      this.broadcaster.broadcast('loading', false);
       this.charactersList = this.formatData(result['results']);
       this.charactersHeaders = Object.keys(this.charactersList[0]);
     }, error => {
+      this.broadcaster.broadcast('loading', false);
       console.error(error);
     })
   }

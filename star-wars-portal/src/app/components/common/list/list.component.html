@@ -1,5 +1,8 @@
 <div class="col-12">
-  <input type="text">
+  <div class="form-group">
+    <label for="search_name">Search</label>
+    <input [(ngModel)]="query" type="text" class="form-control" id="search_name" placeholder="Type a name here!">
+  </div>
 </div>
 <div class="col-12">
   <table class="table">
@@ -10,7 +13,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let data of listData">
+      <tr *ngFor="let data of listData | search:'id,name':query">
         <td *ngFor="let key of headers">{{data[key]}}</td>
         <td *ngIf="actions">
           <a [routerLink]="'./' + data.id">Details</a>

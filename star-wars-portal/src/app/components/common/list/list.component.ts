@@ -10,10 +10,14 @@ export class ListComponent implements OnInit {
   @Input() headers:string[];
   @Input() listData:any;
   @Input() actions:boolean = false;
+  query:any;
 
   constructor() { }
 
   ngOnInit() {
+    setTimeout(() => {
+      console.log(this.listData);
+    }, 3000)
   }
 
   sortData(key) {

@@ -31,7 +31,7 @@ If you not, you may follow the steps to create a new project that will show you 
 
 >>>-ng server (server started at localhost:4200)
 
--After that an application directory was created  with its respective files
+-After that an application directory was created  with its respective files;
 
 -Using the command ng g or ng generate, was created the required components to develop the app:
 
@@ -49,9 +49,9 @@ If you not, you may follow the steps to create a new project that will show you 
 
 >>>-starships-details-page;
 
->>>-starships-page;
+>>>-starships-page.
 
--Now, there are the configuration of the app.module to create routes
+-Configuration of the app.module to create routes;
 
 -In addition, was created the services:
 
@@ -62,6 +62,8 @@ If you not, you may follow the steps to create a new project that will show you 
 -Although, PIPE was create to use the text filed “input” component as a filter in the list by id and name;
 
 -Also, was created the Interface to use the loading component in the transitions between the pages;
+
+-Was used CORS plug-in for Google Chrome to fixing the 'Allow Control Allow Origin' problem;
 
 -To sum up, the entire project uses the Type Script language in the .ts files;
 

@@ -63,7 +63,7 @@ If you not, you may follow the steps to create a new project that will show you 
 
 -Also, was created the Interface to use the loading component in the transitions between the pages;
 
--Was used CORS plug-in for Google Chrome to fixing the 'Allow Control Allow Origin' problem;
+-Was used CORS plug-in for Google Chrome to fixed the 'Allow Control Allow Origin' problem;
 
 -To sum up, the entire project uses the Type Script language in the .ts files;
 

@@ -6,6 +6,8 @@ This project consists on a web application, which uses the STAR WARS API (https:
 
 If you have had installed Node.JS and Angular CLI in your computer you just have to open the application directory in prompt or git bash and type it the command:
 
+>>**-npm install**
+
 >>**-ng server**
 
 If you not, you may follow the steps to create a new project that will show you how to install Node.JS and Angular CLI.

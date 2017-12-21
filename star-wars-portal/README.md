@@ -61,7 +61,7 @@ If you not, you may follow the steps to create a new project that will show you 
 
 -Also, was created the Interface to use the loading component in the transitions between the pages;
 
--To sum up, the entire project uses the script language in the .ts files;
+-To sum up, the entire project uses the Type Script language in the .ts files;
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.1.
 
